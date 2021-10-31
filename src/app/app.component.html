@@ -1,0 +1,29 @@
+
+<div>
+  <form [formGroup]="formContatoPrincipal">
+    
+    <input type="hidden" formControlName="contatoAdicionalId">
+    <input type="text" formControlName="nome">
+    <input type="text" formControlName="telefoneResidencial">
+    <input type="text" formControlName="telefoneCelular1">
+    <input type="text" formControlName="email"><br>
+    <div formArrayName="contatos">
+      <div *ngFor="let contato of contatos().controls; let i=index">
+
+        <div [formGroupName]="i">
+          <input type="hidden" formControlName="contatoAdicionalId">
+          <input type="text" formControlName="nome">
+          <input type="text" formControlName="telefoneResidencial">
+          <input type="text" formControlName="telefoneComercial">
+          <input type="text" formControlName="telefoneCelular1">
+          <input type="text" formControlName="telefoneCelular2">
+          <input type="text" formControlName="whatsapp">
+          <input type="text" formControlName="email">
+        </div>
+
+      </div>
+
+    </div>
+
+  </form>
+</div>
